@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     run: 0,
     wicket: 0,
-    over: 0,
+    ball: 0,
 }
 export const counterSlice = createSlice({
     name: 'counter',
@@ -11,9 +11,15 @@ export const counterSlice = createSlice({
     reducers: {
         run: (state, action) => {
             state.run += action.payload
+        },
+        wicket: (state) => {
+            state.wicket += 1
+        },
+        ball: (state) => {
+            state.ball += 1
         }
     }
 })
 
-export const {run} = counterSlice.actions;
+export const {run, wicket, ball} = counterSlice.actions;
 export default counterSlice.reducer;
